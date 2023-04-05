@@ -1,5 +1,5 @@
-use solana_cli::cli::run;
+mod cli;
 
 fn main() {
-    run();
+    cli::run();
 }

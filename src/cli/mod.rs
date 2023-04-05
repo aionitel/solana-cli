@@ -1,6 +1,8 @@
 use clap::Parser;
 
-#[derive(Parser, Debug)]
+mod wallet;
+
+#[derive(Debug, Parser)]
 struct CliArgs {
     /// Which comamnd to execute. (e.g. "new_wallet" to generate new key pairs for sol wallet)
     #[arg(
@@ -14,6 +16,6 @@ struct CliArgs {
 
 // main entry point to cli app from main
 pub fn run() {
-    let arg = CliArgs::parse();
-    println!("{:?}", arg.command);
+    let wallet: wallet::Wallet = wallet::new_wallet();
+    println!("{:?}", wallet);
 }
