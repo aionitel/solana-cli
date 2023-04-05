@@ -14,3 +14,11 @@ pub fn new_wallet() -> Wallet {
         priv_key: pair.to_base58_string(),
     }
 }
+
+#[test]
+fn new_wallet_is_valid() {
+    let wallet = new_wallet();
+
+    assert_eq!(wallet.pub_key.len(), 44);
+    assert_eq!(wallet.priv_key.len(), 88);
+}

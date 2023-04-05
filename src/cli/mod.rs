@@ -15,7 +15,4 @@ struct CliArgs {
 }
 
 // main entry point to cli app from main
-pub fn run() {
-    let wallet: wallet::Wallet = wallet::new_wallet();
-    println!("{:?}", wallet);
-}
+pub fn run() {}
